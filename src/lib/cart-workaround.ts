@@ -10,7 +10,7 @@ export async function createNewCart(token: string, clientId: string): Promise<bo
       // First, try to delete the existing cart document directly
       // This is a workaround and might not be supported by your API
       try {
-        await fetch(`https://evershinebackend-2.onrender.com/api/internal/deleteCartDocument/${clientId}`, {
+        await fetch(`https://backend-u5eu.onrender.com/api/internal/deleteCartDocument/${clientId}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -30,7 +30,7 @@ export async function createNewCart(token: string, clientId: string): Promise<bo
         const dummyProductId = "dummy-product-" + Date.now()
   
         // Try to add the dummy item
-        await fetch("https://evershinebackend-2.onrender.com/api/addToCart", {
+        await fetch("https://backend-u5eu.onrender.com/api/addToCart", {
           method: "POST",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -45,7 +45,7 @@ export async function createNewCart(token: string, clientId: string): Promise<bo
         console.log("Added dummy item to create fresh cart")
   
         // Now remove the dummy item
-        await fetch("https://evershinebackend-2.onrender.com/api/deleteUserCartItem", {
+        await fetch("https://backend-u5eu.onrender.com/api/deleteUserCartItem", {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -78,7 +78,7 @@ export async function createNewCart(token: string, clientId: string): Promise<bo
       await new Promise((resolve) => setTimeout(resolve, 500))
   
       // Fetch the cart
-      const response = await fetch("https://evershinebackend-2.onrender.com/api/getUserCart", {
+      const response = await fetch("https://backend-u5eu.onrender.com/api/getUserCart", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

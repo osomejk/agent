@@ -77,7 +77,7 @@ export default function ProductsPage() {
         return
       }
 
-      const response = await fetch("https://evershinebackend-2.onrender.com/api/getUserWishlist", {
+      const response = await fetch("https://backend-u5eu.onrender.com/api/getUserWishlist", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -397,7 +397,7 @@ export default function ProductsPage() {
         }
 
         if (wishlist.includes(productId)) {
-          const response = await fetch("https://evershinebackend-2.onrender.com/api/deleteUserWishlistItem", {
+          const response = await fetch("https://backend-u5eu.onrender.com/api/deleteUserWishlistItem", {
             method: "DELETE",
             headers: {
               Authorization: `Bearer ${token}`,
@@ -428,7 +428,7 @@ export default function ProductsPage() {
           }
         } else {
           // Add to wishlist - let backend calculate the price
-          const response = await fetch("https://evershinebackend-2.onrender.com/api/addToWishlist", {
+          const response = await fetch("https://backend-u5eu.onrender.com/api/addToWishlist", {
             method: "POST",
             headers: {
               Authorization: `Bearer ${token}`,
@@ -517,7 +517,7 @@ export default function ProductsPage() {
       }
 
       // Make API request - let backend calculate price
-      const response = await fetch("https://evershinebackend-2.onrender.com/api/addToCart", {
+      const response = await fetch("https://backend-u5eu.onrender.com/api/addToCart", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -591,7 +591,7 @@ export default function ProductsPage() {
         const token = localStorage.getItem("clientImpersonationToken")
         if (!token) return
 
-        const response = await fetch(`https://evershinebackend-2.onrender.com/api/getClientDetails/${clientId}`, {
+        const response = await fetch(`https://backend-u5eu.onrender.com/api/getClientDetails/${clientId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",

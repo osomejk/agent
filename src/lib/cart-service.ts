@@ -77,7 +77,7 @@ export interface CartItem {
       // APPROACH 1: Try to get current cart to identify items
       console.log("APPROACH 1: Removing items individually")
       try {
-        const cartResponse = await fetch("https://evershinebackend-2.onrender.com/api/getUserCart", {
+        const cartResponse = await fetch("https://backend-u5eu.onrender.com/api/getUserCart", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -98,7 +98,7 @@ export interface CartItem {
             for (let attempt = 1; attempt <= 3; attempt++) {
               try {
                 console.log(`Removing item ${item.postId} (Attempt ${attempt})`)
-                const removeResponse = await fetch("https://evershinebackend-2.onrender.com/api/deleteUserCartItem", {
+                const removeResponse = await fetch("https://backend-u5eu.onrender.com/api/deleteUserCartItem", {
                   method: "DELETE",
                   headers: {
                     Authorization: `Bearer ${token}`,
@@ -136,7 +136,7 @@ export interface CartItem {
       // APPROACH 2: Try to create a new empty cart (if API supports it)
       console.log("APPROACH 2: Attempting to create new empty cart")
       try {
-        const createEmptyCartResponse = await fetch("https://evershinebackend-2.onrender.com/api/createEmptyCart", {
+        const createEmptyCartResponse = await fetch("https://backend-u5eu.onrender.com/api/createEmptyCart", {
           method: "POST",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -156,7 +156,7 @@ export interface CartItem {
       // APPROACH 3: Try to reset cart (if API supports it)
       console.log("APPROACH 3: Attempting to reset cart")
       try {
-        const resetCartResponse = await fetch("https://evershinebackend-2.onrender.com/api/resetCart", {
+        const resetCartResponse = await fetch("https://backend-u5eu.onrender.com/api/resetCart", {
           method: "POST",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -176,7 +176,7 @@ export interface CartItem {
       // APPROACH 4: Try to update cart with empty items array (if API supports it)
       console.log("APPROACH 4: Attempting to update cart with empty items")
       try {
-        const updateCartResponse = await fetch("https://evershinebackend-2.onrender.com/api/updateCart", {
+        const updateCartResponse = await fetch("https://backend-u5eu.onrender.com/api/updateCart", {
           method: "PUT",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -197,7 +197,7 @@ export interface CartItem {
       // Verify the cart is now empty
       console.log("Verifying cart status after clearing attempts")
       try {
-        const verifyResponse = await fetch("https://evershinebackend-2.onrender.com/api/getUserCart", {
+        const verifyResponse = await fetch("https://backend-u5eu.onrender.com/api/getUserCart", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,

@@ -69,7 +69,7 @@ export default function AgentOrdersPage() {
         return
       }
 
-      const response = await fetch("https://evershinebackend-2.onrender.com/api/agent/orders-with-followups", {
+      const response = await fetch("https://backend-u5eu.onrender.com/api/agent/orders-with-followups", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -128,7 +128,7 @@ export default function AgentOrdersPage() {
       }
 
       const response = await fetch(
-        `https://evershinebackend-2.onrender.com/api/agent/orders/${selectedOrder.orderId}/followup`,
+        `https://backend-u5eu.onrender.com/api/agent/orders/${selectedOrder.orderId}/followup`,
         {
           method: "POST",
           headers: {
@@ -171,7 +171,7 @@ export default function AgentOrdersPage() {
       const token = localStorage.getItem("token") || localStorage.getItem("agentToken")
 
       const response = await fetch(
-        `https://evershinebackend-2.onrender.com/api/agent/followup/${followUpId}/send-whatsapp`,
+        `https://backend-u5eu.onrender.com/api/agent/followup/${followUpId}/send-whatsapp`,
         {
           method: "POST",
           headers: {
@@ -206,7 +206,7 @@ export default function AgentOrdersPage() {
     try {
       const token = localStorage.getItem("token") || localStorage.getItem("agentToken")
 
-      const response = await fetch(`https://evershinebackend-2.onrender.com/api/agent/followup/${followUpId}/status`, {
+      const response = await fetch(`https://backend-u5eu.onrender.com/api/agent/followup/${followUpId}/status`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,

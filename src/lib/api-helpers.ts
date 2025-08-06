@@ -9,7 +9,7 @@ export async function fetchWishlistItems() {
 
     console.log("Fetching wishlist with token:", token.substring(0, 10) + "...")
 
-    const response = await fetch("https://evershinebackend-2.onrender.com/api/getUserWishlist", {
+    const response = await fetch("https://backend-u5eu.onrender.com/api/getUserWishlist", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -54,7 +54,7 @@ export async function syncLocalWishlistWithServer(clientId: string, localItems: 
     }
 
     // Get server wishlist first
-    const response = await fetch("https://evershinebackend-2.onrender.com/api/getUserWishlist", {
+    const response = await fetch("https://backend-u5eu.onrender.com/api/getUserWishlist", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -75,7 +75,7 @@ export async function syncLocalWishlistWithServer(clientId: string, localItems: 
 
     // Add each missing item to the server
     for (const item of itemsToSync) {
-      await fetch("https://evershinebackend-2.onrender.com/api/addToWishlist", {
+      await fetch("https://backend-u5eu.onrender.com/api/addToWishlist", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

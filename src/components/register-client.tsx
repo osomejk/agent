@@ -113,7 +113,7 @@ export default function RegisterClient() {
       // Format phone number to E.164 format if it doesn't already start with +
       const formattedNumber = phoneNumber.startsWith("+") ? phoneNumber : `+91${phoneNumber}`
 
-      const response = await axios.post("https://evershinebackend-2.onrender.com/api/client/check-exists", {
+      const response = await axios.post("https://backend-u5eu.onrender.com/api/client/check-exists", {
         phoneNumber: formattedNumber,
       })
 
@@ -174,7 +174,7 @@ export default function RegisterClient() {
       }
 
       // Call the OTP send API
-      const response = await axios.post("https://evershinebackend-2.onrender.com/api/otp/send", {
+      const response = await axios.post("https://backend-u5eu.onrender.com/api/otp/send", {
         phoneNumber,
       })
 
@@ -228,7 +228,7 @@ export default function RegisterClient() {
       console.log("🔢 OTP Value:", otpValue)
 
       // Call the OTP verify API
-      const response = await axios.post("https://evershinebackend-2.onrender.com/api/otp/verify", {
+      const response = await axios.post("https://backend-u5eu.onrender.com/api/otp/verify", {
         phoneNumber: formattedPhone,
         otp: otpValue,
       })
@@ -285,7 +285,7 @@ export default function RegisterClient() {
 
             console.log("🔄 Generating impersonation token...")
             const impersonateResponse = await fetch(
-              `https://evershinebackend-2.onrender.com/api/agent/impersonate/${response.data.data.clientId}`,
+              `https://backend-u5eu.onrender.com/api/agent/impersonate/${response.data.data.clientId}`,
               {
                 method: "POST",
                 headers: {
@@ -382,7 +382,7 @@ export default function RegisterClient() {
       }
 
       // Make the API request with fetch instead of axios
-      const response = await fetch("https://evershinebackend-2.onrender.com/api/create-client", {
+      const response = await fetch("https://backend-u5eu.onrender.com/api/create-client", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -428,7 +428,7 @@ export default function RegisterClient() {
       // Generate impersonation token for the new client
       try {
         const impersonateResponse = await fetch(
-          `https://evershinebackend-2.onrender.com/api/agent/impersonate/${clientId}`,
+          `https://backend-u5eu.onrender.com/api/agent/impersonate/${clientId}`,
           {
             method: "POST",
             headers: {
@@ -600,7 +600,7 @@ export default function RegisterClient() {
                       onClick={async () => {
                         try {
                           setIsSubmitting(true)
-                          const response = await axios.post("https://evershinebackend-2.onrender.com/api/otp/send", {
+                          const response = await axios.post("https://backend-u5eu.onrender.com/api/otp/send", {
                             phoneNumber: formattedPhone,
                           })
 

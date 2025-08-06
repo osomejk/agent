@@ -2,7 +2,7 @@ export const agentAPI = {
   login: async (email: string, password: string) => {
     try {
       console.log("Logging in agent:", { email })
-      const response = await fetch("https://evershinebackend-2.onrender.com/api/agentLogin", {
+      const response = await fetch("https://backend-u5eu.onrender.com/api/agentLogin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export const agentAPI = {
   },
   register: async (name: string, email: string, password: string) => {
     try {
-      const response = await fetch("https://evershinebackend-2.onrender.com/api/create-agent", {
+      const response = await fetch("https://backend-u5eu.onrender.com/api/create-agent", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -90,7 +90,7 @@ export const agentAPI = {
       }
 
       // Change this URL to match your backend route
-      const response = await fetch("https://evershinebackend-2.onrender.com/api/agent/clients", {
+      const response = await fetch("https://backend-u5eu.onrender.com/api/agent/clients", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -126,7 +126,7 @@ export const agentAPI = {
       console.log(`Making API request to impersonate client ${clientId}`)
 
       // Change the endpoint to match your backend route
-      const response = await fetch(`https://evershinebackend-2.onrender.com/api/agent/impersonate/${clientId}`, {
+      const response = await fetch(`https://backend-u5eu.onrender.com/api/agent/impersonate/${clientId}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -178,7 +178,7 @@ export const agentAPI = {
       }
 
       // Use the same URL pattern as your other API calls
-      const response = await fetch("https://evershinebackend-2.onrender.com/api/agent/orders", {
+      const response = await fetch("https://backend-u5eu.onrender.com/api/agent/orders", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -220,7 +220,7 @@ const getWishlist = async () => {
       return { success: false, message: "No authentication token found" }
     }
 
-    const response = await fetch("https://evershinebackend-2.onrender.com/api/getUserWishlist", {
+    const response = await fetch("https://backend-u5eu.onrender.com/api/getUserWishlist", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -252,7 +252,7 @@ const removeFromWishlist = async (productId: string) => {
       return { success: false, message: "No authentication token found" }
     }
 
-    const response = await fetch("https://evershinebackend-2.onrender.com/api/deleteUserWishlistItem", {
+    const response = await fetch("https://backend-u5eu.onrender.com/api/deleteUserWishlistItem", {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -285,7 +285,7 @@ const addToCart = async (productId: string) => {
       return { success: false, message: "No authentication token found" }
     }
 
-    const response = await fetch("https://evershinebackend-2.onrender.com/api/addToCart", {
+    const response = await fetch("https://backend-u5eu.onrender.com/api/addToCart", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -318,7 +318,7 @@ const updateWishlistPrices = async (commissionRate: number) => {
       return { success: false, message: "No authentication token found" }
     }
 
-    const response = await fetch("https://evershinebackend-2.onrender.com/api/updateWishlistPrices", {
+    const response = await fetch("https://backend-u5eu.onrender.com/api/updateWishlistPrices", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,

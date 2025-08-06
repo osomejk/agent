@@ -10,7 +10,7 @@ export async function forceResetCart(token: string): Promise<boolean> {
   
     // Try to directly modify the database document if possible
     try {
-      const response = await fetch("https://evershinebackend-2.onrender.com/api/forceResetCart", {
+      const response = await fetch("https://backend-u5eu.onrender.com/api/forceResetCart", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -30,7 +30,7 @@ export async function forceResetCart(token: string): Promise<boolean> {
     if (!success) {
       try {
         // First try to delete the cart completely
-        await fetch("https://evershinebackend-2.onrender.com/api/deleteCart", {
+        await fetch("https://backend-u5eu.onrender.com/api/deleteCart", {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -39,7 +39,7 @@ export async function forceResetCart(token: string): Promise<boolean> {
         }).catch(() => null)
   
         // Then create a new empty cart
-        const createResponse = await fetch("https://evershinebackend-2.onrender.com/api/createCart", {
+        const createResponse = await fetch("https://backend-u5eu.onrender.com/api/createCart", {
           method: "POST",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -63,7 +63,7 @@ export async function forceResetCart(token: string): Promise<boolean> {
   // Function to check if the cart has been corrupted
   export async function isCartCorrupted(token: string): Promise<boolean> {
     try {
-      const response = await fetch("https://evershinebackend-2.onrender.com/api/getUserCart", {
+      const response = await fetch("https://backend-u5eu.onrender.com/api/getUserCart", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
